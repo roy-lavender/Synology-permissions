@@ -1,0 +1,19 @@
+1. Install Web Station
+
+2. Ensure /volume1/web/ exists.
+
+3. Create JSON file: status.json containing something like this:
+
+{
+  "status": "running",
+  "task": "Re-synching NAS",
+  "progress": "First Step",
+  "updated": "2026-05-03 14:10:00"
+}
+
+---------------------
+
+scripts/toggle_status_page.sh
+
+This script is in my Synology permissions / Code / Splash page when system inaccessible / directory
+

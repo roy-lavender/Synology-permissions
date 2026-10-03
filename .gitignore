@@ -1,0 +1,13 @@
+# Real user data with plaintext passwords/emails -- never commit.
+# Whitelist approach: ignore all JSON everywhere, then explicitly allow
+# the known-safe fixture/config files. Any new *.json file is excluded
+# by default until proven safe and added below.
+*.json
+!/user_permissions_test.json
+!/variables.json
+/Backups/
+
+# Runtime output
+cmd_output.txt
+__pycache__/
+*.pyc

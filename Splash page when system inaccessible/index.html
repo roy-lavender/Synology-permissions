@@ -1,0 +1,12 @@
+<script>
+fetch("status.json")
+  .then(r => r.json())
+  .then(data => {
+    if (data.status === "running") {
+      document.body.innerHTML = "<h1>⚠️ Processing in progress</h1>";
+    }
+    setTimeout(() => {
+      window.location.href = "/webman/index.cgi";
+    }, 2000);
+  });
+</script>

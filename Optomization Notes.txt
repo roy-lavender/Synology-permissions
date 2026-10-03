@@ -1,0 +1,54 @@
+Last run on pre-optomized
+
+0: deleted_users: 6
+0: added_users: 6
+0: deleted_groups: 1
+0: added_groups: 3
+0: cleaned_aces: 10094
+0: cleaned_group_aces: 0
+0: added_aces: 10094
+0: User or Group: auto_group_1, Added ACEs: 3
+0: User or Group: auto_group_2, Added ACEs: 3
+0: User or Group: auto_group_3, Added ACEs: 2
+0: User or Group: henley, Added ACEs: 4740
+0: User or Group: squid, Added ACEs: 3038
+0: User or Group: tim, Added ACEs: 1973
+0: User or Group: jim, Added ACEs: 158
+0: User or Group: danversBand, Added ACEs: 49
+0: User or Group: mvcb, Added ACEs: 128
+0: thinking_dir_count 527830
+0: thinking_file_count 801463
+0: total_time: 7.42 minutes
+0: total_Synology_ACL_time: 5.37 minutes
+
+With optomizations
+
+0: deleted_users: 6
+0: added_users: 6
+0: deleted_groups: 1
+0: added_groups: 3
+0: cleaned_aces: 2
+0: cleaned_group_aces: 0
+0: added_aces: 10110
+0: User or Group: auto_group_1, Added ACEs: 3
+0: User or Group: auto_group_2, Added ACEs: 3
+0: User or Group: auto_group_3, Added ACEs: 2
+0: User or Group: henley, Added ACEs: 4748
+0: User or Group: squid, Added ACEs: 3046
+0: User or Group: tim, Added ACEs: 1973
+0: User or Group: jim, Added ACEs: 158
+0: User or Group: danversBand, Added ACEs: 49
+0: User or Group: mvcb, Added ACEs: 128
+0: thinking_dir_count 527830
+0: thinking_file_count 801431
+0: total_time: 5.76 minutes
+0: total_Synology_ACL_time: 4.54 minutes
+
+
+
+synogroup -get auto_group_music_Recordings_Video called from check_group_exist
+synogroup -get auto_group_music_Recordings_mp3s called from check_group_exist
+synogroup -add auto_group_music_Recordings_mp3s called from add_group
+synogroup -get auto_group_music_Recordings_mp3s called from check_group_exist
+synogroup -add auto_group_music_Recordings_Video called from add_group
+synogroup -get auto_group_music_Recordings_Video called from check_group_exist

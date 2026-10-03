@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Music Pipeline Status</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #eee;
+      text-align: center;
+      padding-top: 50px;
+    }
+    .box {
+      display: inline-block;
+      padding: 20px 40px;
+      border-radius: 10px;
+      background: #222;
+      box-shadow: 0 0 10px #000;
+    }
+    .running { color: orange; }
+    .idle { color: lightgreen; }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h1>🎼 Music Processing Status</h1>
+  <h2 id="status">Loading...</h2>
+  <p id="task"></p>
+  <p id="progress"></p>
+  <small id="updated"></small>
+</div>
+
+<script>
+async function updateStatus() {
+  try {
+    const res = await fetch("status.json?t=" + Date.now());
+    const data = await res.json();
+
+    const statusEl = document.getElementById("status");
+    statusEl.textContent = data.status.toUpperCase();
+    statusEl.className = data.status;
+
+    document.getElementById("task").textContent = data.task;
+    document.getElementById("progress").textContent = data.progress;
+    document.getElementById("updated").textContent = "Last update: " + data.updated;
+
+  } catch (e) {
+    document.getElementById("status").textContent = "ERROR";
+  }
+}
+
+setInterval(updateStatus, 3000);
+updateStatus();
+</script>
+
+</body>
+</html>
